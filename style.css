@@ -7,9 +7,31 @@
     text-decoration:none;
 }
 
-html{
+/* html{
     scroll-behavior: smooth;
     background: linear-gradient(220.55deg, #191919 0%, #3D3D90  100%);
+} */
+
+html{
+    scroll-behavior: smooth;
+    /* background: linear-gradient(to right, #833ab4,
+    #fd1d1d, #fcb045); */
+    background: linear-gradient(to right, #232526,
+    #414345);
+    background-size: 800% 800%;
+    animation: animate-background 20s infinite ease-in-out;
+}
+
+@keyframes animate-background {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
 }
 
 /* custom scroll bar */
@@ -73,14 +95,48 @@ section .title{
 
 .navbar.sticky{
     padding: 15px 0;
-    background: rgba(65, 65, 102, 1); 
-    /* the 1 is for transparency, 1 is solid */
+    background: #414345;
 }
+
 
 .navbar .max-width{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.animated-circle{
+    width: 60px;
+    height: 60px;
+}
+
+.circle{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #fff;
+    border-top-color: #4bc8eb;
+    border-bottom-color: #f13a8f;
+    border-radius: 50%;
+    animation: rotate 5s linear infinite;
+}
+
+.circle-inner{
+    border-top-color: #36f372;
+    border-bottom-color: #000;
+    animation-duration: 2.5s;
+}
+
+@keyframes rotate{
+    0%{
+        transform: scale(1) rotate(360deg);
+    }
+    50%{
+        transform: scale(.8) rotate(-360deg);
+    }
+    100%{
+        transform: scale(1) rotate(360deg);
+    }
 }
 
 .navbar .logo a{
